@@ -1,6 +1,14 @@
 # Mycroft Plasmoid // Release 2.0
 #### Mycroft Ai Plasmoid and Skills for KDE Plasma 5 Desktop
 
+Auto Install Instructions:
+
+1. git clone https://github.com/MycroftAI/installers/kde_plasmoid_fedora
+2. chmod +x install.sh
+3. ./install.sh
+
+Manual Install Instructions: 
+
 1. Installation Requirements
 
 This plasmoid requires Mycroft Core Installed from http://github.com/MycroftAi/ using the GIT Method:
@@ -64,7 +72,3 @@ This plasmoid requires Mycroft Core Installed from http://github.com/MycroftAi/ 
  + From Konsole: cp /usr/lib/python2.7/dist-packages/_dbus* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/
  + From Konsole: cp -R /usr/lib/python2.7/dist-packages/PyQt5* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/    
  + From Konsole: cp /usr/lib/python2.7/dist-packages/sip* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/
- 
-5. Skills Dependency for Other Distributions
-
-Python Dbus, PyQT5 and SIP package is required and copying the Python Dbus, Python QT folder and SIP libs from your system python install over to /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/.
