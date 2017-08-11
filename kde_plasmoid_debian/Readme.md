@@ -1,9 +1,9 @@
 # Mycroft Plasmoid // Release 2.0
-#### Mycroft Ai Plasmoid and Skills for KDE Plasma 5 Desktop
+#### Mycroft AI Plasmoid and Skills for KDE Plasma 5 Desktop
 
 Auto Install Instructions:
 
-1. git clone https://github.com/MycroftAI/installers/kde_plasmoid_debian
+1. wget https://raw.githubusercontent.com/MycroftAI/installers/master/kde_plasmoid_debian/install.sh
 2. chmod +x install.sh
 3. ./install.sh
 
@@ -11,7 +11,7 @@ Manual Install Instructions:
 
 1. Installation Requirements
 
-  + This plasmoid requires Mycroft Core Installed from http://github.com/MycroftAi/ using the GIT Method:
+  + This plasmoid requires Mycroft Core Installed from http://github.com/MycroftAI/ using the GIT Method:
     + cd /home/$USER/
     + git clone https://github.com/MycroftAI/mycroft-core
     + For Debian Run: ./build_host_setup_debian.sh
