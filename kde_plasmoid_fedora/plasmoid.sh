@@ -34,7 +34,7 @@ sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/content
 ############################################################################
 
 # Install all necessary supporting libraries
-sudo dnf install dbus-python PyQt-devel sip sip-devel
+sudo dnf install dbus-python PyQt-devel sip-devel
 
 # Restart the machine!
 echo "Everything is built and ready to go!"

@@ -12,7 +12,7 @@ sudo dnf install git -y
 ############################################################################
 
 # Pull down mycroft-core 
-git clone https://github.com/MycroftAI/mycroft-core.git
+#git clone https://github.com/MycroftAI/mycroft-core.git
 
 # Build and install Mycroft: 
 cd mycroft-core
