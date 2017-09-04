@@ -11,7 +11,7 @@ git clone https://anongit.kde.org/plasma-mycroft.git
 
 # Install all necessary supporting libraries and tools
 
-sudo dnf install kf5-knotifications-devel qt5-qtbase-devel qt5-qtdeclarative-devel qt5-qtquick1-devel qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtwebsockets qt5-qtwebsockets-devel cmake extra-cmake-modules kf5-plasma-devel kf5-i18n-devel qt5-qtwebkit qt5-qtwebkit-devel -y
+sudo dnf install kf5-knotifications-devel qt5-qtbase-devel qt5-qtdeclarative-devel qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtwebsockets qt5-qtwebsockets-devel cmake extra-cmake-modules kf5-plasma-devel kf5-ki18n-devel qt5-qtwebkit qt5-qtwebkit-devel -y
 
 # Build the Plasmoid
 cd plasma-mycroft
@@ -34,7 +34,7 @@ sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/content
 ############################################################################
 
 # Install all necessary supporting libraries
-sudo dnf install dbus-python PyQt-devel sip sip-devel
+sudo dnf install dbus-python PyQt-devel sip-devel
 
 # Restart the machine!
 echo "Everything is built and ready to go!"
