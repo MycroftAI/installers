@@ -42,7 +42,7 @@ echo "-----------------------------------------------------"
 ############################################################################
 # Retrieve and build the Plasmoid
 ############################################################################
-
+cd ..
 # Pull down the Plasmoid code from KDE repos
 git clone https://anongit.kde.org/plasma-mycroft.git
 
