@@ -32,7 +32,6 @@ echo "*****************************************************"
 echo "The compiling can take a long time, up to 2 hours." 
 echo "Go enjoy a movie, we'll finish the install.       "
 echo "*****************************************************"
-./build_host_setup_fedora.sh 
 ./dev_setup.sh
 
 echo "-----------------------------------------------------"
