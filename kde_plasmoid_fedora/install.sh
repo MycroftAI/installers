@@ -29,10 +29,10 @@ git clone https://github.com/MycroftAI/mycroft-core.git
 cd mycroft-core
 
 echo "*****************************************************"
-echo "The compiling can take a long time, up to 2 hours." 
+echo "The compiling can take a long time." 
 echo "Go enjoy a movie, we'll finish the install.       "
 echo "*****************************************************"
-./build_host_setup_fedora.sh 
+
 ./dev_setup.sh
 
 echo "-----------------------------------------------------"
@@ -49,7 +49,7 @@ git clone https://anongit.kde.org/plasma-mycroft.git
 
 # Install all necessary supporting libraries and tools
 
-sudo dnf install kf5-knotifications-devel qt5-qtbase-devel qt5-qtdeclarative-devel qt5-qtquick1-devel qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtwebsockets qt5-qtwebsockets-devel cmake extra-cmake-modules kf5-plasma-devel kf5-i18n-devel qt5-qtwebkit qt5-qtwebkit-devel -y
+sudo dnf install kf5-knotifications-devel qt5-qtbase-devel qt5-qtdeclarative-devel qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtwebsockets qt5-qtwebsockets-devel cmake extra-cmake-modules kf5-plasma-devel kf5-ki18n-devel qt5-qtwebkit qt5-qtwebkit-devel qt5-qtgraphicaleffects -y
 
 # Build the Plasmoid
 cd plasma-mycroft
@@ -72,7 +72,7 @@ sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/content
 ############################################################################
 
 # Install all necessary supporting libraries
-sudo dnf install dbus-python PyQt-devel sip sip-devel
+sudo dnf install dbus-python pyqt5-devel sip sip-devel
 
 Arch=$(uname -m)
 
@@ -90,25 +90,33 @@ cp -R /usr/lib64/python2.7/site-packages/PyQt5* /home/$USER/.virtualenvs/mycroft
 cp /usr/lib64/python2.7/site-packages/sip* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/
 fi
 
+# Test mycroft service and install default skills
+cd ~
+secs=$((60 * 4))
+cd mycroft-core
+./start-mycroft.sh all
+while [ $secs -gt 0 ]; do
+   echo -ne "Please Wait.. $secs (secs)\033[0K\r"
+   sleep 1
+   : $((secs--))
+done
+./stop-mycroft.sh
+echo "-----------------------------------"
+echo "Getting those awesome plasma skills"
+echo "-----------------------------------"
+
 # Get those awesome plasma skills
+cd /opt/mycroft/skills/
 git clone https://github.com/AIIX/krunner-search-skill  
-cp -R krunner-search-skill/* /opt/mycroft/skills/krunner-search-skill/
 git clone https://github.com/AIIX/plasma-activities-skill  
-cp -R plasma-activities-skill/* /opt/mycroft/skills/plasma-activities-skill/
 git clone https://github.com/AIIX/plasma-user-control-skill  
-cp -R plasma-user-control-skill/* /opt/mycroft/skills/plasma-user-control-skill/
 git clone https://github.com/AIIX/unsplash-wallpaper-plasma-skill  
-cp -R unsplash-wallpaper-plasma-skill/* /opt/mycroft/skills/unsplash-wallpaper-plasma-skill/
 git clone https://github.com/AIIX/clarifai-image-recognition-skill  
-cp -R clarifai-image-recognition-skill/* /opt/mycroft/skills/clarifai-image-recognition-skill/
 
 #Get those display skills for the desktop
 git clone https://github.com/AIIX/skill-weather
-cp -R skill-weather/* /opt/mycroft/skills/skill-weather/
 git clone https://github.com/AIIX/skill-stock
-cp -R skill-stock/* /opt/mycroft/skills/skill-stock/
 git clone https://github.com/AIIX/skill-wiki
-cp -R skill-wiki/* /opt/mycroft/skills/skill-wiki/
 
 # Restart the machine!
 echo "Everything is built and ready to go!"
