@@ -17,7 +17,7 @@ Manual Install Instructions:
     + Run: ./dev_setup.sh
 
 2. Installation Instructions
-  + Open Konsole: sudo dnf install kf5-knotifications-devel qt5-qtbase-devel qt5-qtdeclarative-devel qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtwebsockets qt5-qtwebsockets-devel cmake extra-cmake-modules kf5-plasma-devel kf5-ki18n-devel qt5-qtwebkit qt5-qtwebkit-devel qt5-qtgraphicaleffects -y
+  + Open Konsole: sudo dnf install kf5-knotifications-devel qt5-qtbase-devel qt5-qtdeclarative-devel qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtwebsockets qt5-qtwebsockets-devel cmake extra-cmake-modules kf5-plasma-devel kf5-ki18n-devel qt5-qtwebkit qt5-qtwebkit-devel qt5-qtgraphicaleffects dbus-devel dbus-glib-devel -y
   + git clone https://anongit.kde.org/plasma-mycroft.git/
   + cd plasma-mycroft
   + mkdir build
@@ -31,7 +31,7 @@ Manual Install Instructions:
   + sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/pkgstopservice.sh
   + Logout / Login or Restart Plasma Shell
 
-3. KDE Platform Skills Installation
+3. Visual Display Skills Installation
 
 Install Skills With HTML Displays:
  + skill-weather: Replace /opt/mycroft/skills/skill-weather with https://github.com/AIIX/skill-weather
@@ -47,17 +47,3 @@ Install Skills with Dynamic QML Displays:
     + cd /opt/mycroft/skills
     + git clone https://github.com/AIIX/skill-wiki
 
- To Install Plasma Desktop Skills(Manually) (Skills Dependency Install is Very Important):
-    + git clone https://github.com/AIIX/krunner-search-skill  
-    + git clone https://github.com/AIIX/plasma-activities-skill  
-    + git clone https://github.com/AIIX/plasma-user-control-skill
-    + git clone https://github.com/AIIX/unsplash-wallpaper-plasma-skill  
-    + git clone https://github.com/AIIX/clarifai-image-recognition-skill  
-    
-4. Skills Dependency Requirements
-
- + For Skills (Fedora): sudo dnf install dbus-python pyqt5-devel sip sip-devel
- + From Konsole: cp -R /usr/lib64/python2.7/site-packages/dbus* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/
- + From Konsole: cp /usr/lib64/python2.7/site-packages/_dbus* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/
- + From Konsole: cp -R /usr/lib64/python2.7/site-packages/PyQt5* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/    
- + From Konsole: cp /usr/lib64/python2.7/site-packages/sip* /home/$USER/.virtualenvs/mycroft/lib/python2.7/site-packages/
